@@ -3,6 +3,10 @@ from django.db import models
 from django.utils import timezone
 from django.contrib.auth.models import AbstractBaseUser, BaseUserManager, PermissionsMixin
 
+
+"""
+This Class is a copy of the principal class of Django
+"""
 class UserManager(BaseUserManager):
 
     def _create_user(self, username, email, password, is_staff,
@@ -69,7 +73,7 @@ class User(AbstractBaseUser, PermissionsMixin):
 
     # This function return the Full Name of the User
     def full_name(self):
-        return title('%s %s' % (self.first_name, self.last_name))
+        return '%s %s' % (self.first_name, self.last_name)
 
 
     # This meta Class is to put a diferent name of the table in to the database.
